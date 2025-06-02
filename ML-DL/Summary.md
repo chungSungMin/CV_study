@@ -58,3 +58,10 @@ Unsupervised Learning의 경우 데이터에 숨은 특정 패턴을 파악하�
 
 # 13강
 Neural Network의 경우 Perceptron을 여러 레이어로 쌓은 Multi Laeyr Perceptron의 등장으로 발전했습니다. 그리고 이미지의 특징 부터 학습까지 모두 모델이 스스로 하는 End-to-End 파이프라인이 등장하였습니다. 그리고 해당 모델의 경우 각 레이어에서의 그레디어언트를 구해 체인룰에 의해서 가중치가 학습되게 됩니다.
+
+# 14강
+
+
+
+
+# 15강
