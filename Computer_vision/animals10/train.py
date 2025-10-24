@@ -9,7 +9,7 @@ from models.resnet34 import get_model
 from tqdm import tqdm
 
 
-def train(train_dataloader, val_dataloader, period, epochs, num_class, seed):
+def start_train(train_dataloader, val_dataloader, period, epochs, num_class, seed):
     set_seed(seed)
     device = set_device()
     model = get_model(num_class).to(device)
@@ -94,7 +94,7 @@ if __name__ == "__main__" :
     # pwd = os.getcwd()
     # data_path = os.path.join(pwd, "data")
 
-    data_path = "/root/.cache/kagglehub/datasets/alessiocorrado99/animals10/versions/2"
+    data_path = "/root/.cache/kagglehub/datasets/alessiocorrado99/animals10/versions/2/raw-img"
 
     train_dataset, val_dataset, test_dataset = get_dataset(data_path)
 
@@ -102,9 +102,9 @@ if __name__ == "__main__" :
         train_dataset, val_dataset, test_dataset
     )
 
-    epoch = 10
-    val_period = 2
-    trained_model = train(train_dataloader,val_dataloader, val_period, epoch, num_class=10, seed=42)
+    epoch = 3
+    val_period = 10
+    trained_model = start_train(train_dataloader,val_dataloader, val_period, epoch, num_class=10, seed=42)
 
     # example_image = train_data[0][0]
     # vis_example(example_image)

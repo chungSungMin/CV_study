@@ -11,18 +11,23 @@ def get_dataloader(train_dataset, val_dataset, test_dataset):
         batch_size=32,
         shuffle=True
     )
+    # print(f"train_loader : {next(iter(train_dataloader))[1]}")
 
     val_dataloader = DataLoader(
         val_dataset,
         batch_size=32,
         shuffle=False
     )
+    # print(f"train_loader : {next(iter(val_dataloader))[1]}")
+
 
     test_dataloader = DataLoader(
         test_dataset,
         batch_size=32,
         shuffle=False
     )
+    # print(f"train_loader : {next(iter(test_dataloader))[1]}")
+
     
     return train_dataloader, val_dataloader, test_dataloader
 

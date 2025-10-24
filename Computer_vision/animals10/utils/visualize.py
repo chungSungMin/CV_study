@@ -3,7 +3,7 @@ from utils.augmentation import get_train_transforms
 import albumentations as A
 import torch
 
-def vis_example(image_tensor):
+def vis_example(image_tensor=None, get_info=False):
     transforms = get_train_transforms()
 
     for transforms_op in transforms.transforms : 
@@ -12,6 +12,9 @@ def vis_example(image_tensor):
             std = torch.tensor(transforms_op.std)
             break
 
+    if get_info :
+        return mean, std 
+
     de_nomalized_image = image_tensor * std[:, None, None] + mean[:, None, None]
 
     de_nomalized_image = de_nomalized_image.permute(1,2,0)
@@ -19,6 +22,8 @@ def vis_example(image_tensor):
     plt.imshow(de_nomalized_image)
     plt.title("Sample Transformed Image")
     plt.show()
+
+    
 
     
 
